@@ -12,52 +12,49 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(253, 253, 253);
-  font-family: 'Comfortaa';
+  font-family: 'Comfortaa', sans-serif;
 }
 
+/* ========== HEADER ========== */
 header {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(255, 255, 255);
-  padding: 15pt;
   align-items: center;
-  font-size: medium;
-  padding-bottom: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background-color: rgb(255, 255, 255);
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  gap: 15px;
   flex-wrap: wrap;
-  align-content: center;
-  flex-direction: column;
 }
 
 .logo{
   color: rgb(0, 78, 52);
-  font-size: 35pt;
-  font-family: 'Passions Conflict';
+  font-size: clamp(24px, 5vw, 35pt);
+  font-family: 'Passions Conflict', cursive;
+  white-space: nowrap;
 }
 
 nav {
-  padding: 15pt;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 8px;
+  flex: 1;
 }
 
 nav button {
-  margin: 5pt;
   background-color: rgb(0, 78, 52);
-  border: 0cap;
-  padding: 10pt;
-  border-radius: 25pt;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
   color: rgb(255, 255, 255);
-  align-items: center;
-  font-size: medium;
-  width: 70pt;
+  font-size: clamp(11px, 2vw, 14px);
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 nav button:hover {
@@ -71,16 +68,15 @@ nav button.active {
 }
 
 .header-buttons button{
-  margin: 5pt;
   background-color: rgb(0, 78, 52);
-  border: 0cap;
-  padding: 10pt;
-  border-radius: 25pt;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
   color: rgb(255, 255, 255);
-  align-items: center;
-  font-size: medium;
+  font-size: clamp(11px, 2vw, 14px);
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .header-buttons button:hover {
@@ -93,43 +89,62 @@ nav button.active {
   box-shadow: 0 4px 8px rgba(0, 78, 52, 0.3);
 }
 
+/* ========== SECTIONS ========== */
 section {
   display: none;
-  min-height: calc(100vh - 120px);
-  /* padding-bottom: 80px; */
+  min-height: calc(100vh - 100px);
+  padding-bottom: 60px;
 }
 
 section.active {
-  display: contents;
+  display: block;
 }
 
-.about-section, .skills-section{
-  /* flex: 1; */
+/* ========== ABOUT SECTION ========== */
+.about-section {
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  min-height: calc(100vh - 100px);
 }
 
 .about-card{
-  width: 40%;
-  padding: 15pt;
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
   background-color: rgb(0, 78, 52);
   color: rgb(255, 255, 255);
-  margin-left: 15pt;
-  border-radius: 20pt;
+  border-radius: 20px;
   text-align: justify;
-  line-height: 1.5;
-  font-size: 12pt;
-  font-family: 'Comfortaa';
-  height: 410pt;
-  overflow-y: overlay;
-  margin-top: 30pt;
-  margin-bottom: 30pt;
-  margin-right: 15pt;
+  line-height: 1.6;
+  font-size: clamp(11px, 2vw, 14px);
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
+.about-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.about-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.about-card::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.about-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ========== SKILLS SECTION ========== */
 #skills {
   background-color: rgb(253, 253, 253);
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
   position: relative;
 }
@@ -137,43 +152,52 @@ section.active {
 .skills-section {
   display: flex;
   gap: 20px;
-  padding: 40px 60px;
-  overflow-x: hidden;
+  padding: 20px;
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   position: relative;
 }
 
-/* Hide scrollbar completely */
 .skills-section::-webkit-scrollbar {
-  display: none;
+  height: 8px;
 }
 
-.skills-section {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.skills-section::-webkit-scrollbar-track {
+  background: rgba(0, 78, 52, 0.1);
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.skills-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 78, 52, 0.4);
+  border-radius: 10px;
+}
+
+.skills-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 78, 52, 0.6);
 }
 
 .skills-carousel {
   background-color: rgb(255, 255, 255);
   border: 1px solid rgba(0, 78, 52, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  min-width: 380px;
-  max-width: 380px;
-  height: 500px;
-  border-radius: 20pt;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: clamp(280px, 80vw, 350px);
+  max-width: clamp(280px, 80vw, 350px);
+  height: 400px;
+  border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
   flex-shrink: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   cursor: pointer;
 }
 
 .skills-carousel:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 4px 16px rgba(0, 78, 52, 0.25);
   border-color: rgb(0, 78, 52);
 }
@@ -181,38 +205,36 @@ section.active {
 .carousel-header {
   background-color: rgb(0, 78, 52);
   color: rgb(255, 255, 255);
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 18px);
   font-weight: 600;
-  padding: 30px 24px;
+  padding: 20px 18px;
   text-align: center;
   position: relative;
 }
 
 .carousel-body {
-  padding: 30px 26px;
-  line-height: 1.8;
+  padding: 20px;
+  line-height: 1.6;
   color: rgb(51, 51, 51);
-  font-size: 12pt;
-  height: calc(100% - 90px);
+  font-size: clamp(11px, 2vw, 13px);
+  height: calc(100% - 70px);
   overflow-y: auto;
   background-color: rgb(255, 255, 255);
   text-align: justify;
 }
 
 .carousel-body::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 .carousel-body::-webkit-scrollbar-track {
   background: rgba(0, 78, 52, 0.1);
   border-radius: 10px;
-  margin: 8px 0;
 }
 
 .carousel-body::-webkit-scrollbar-thumb {
   background: rgba(0, 78, 52, 0.4);
   border-radius: 10px;
-  transition: background 0.3s ease;
 }
 
 .carousel-body::-webkit-scrollbar-thumb:hover {
@@ -221,17 +243,17 @@ section.active {
 
 .carousel-body br {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   content: "";
 }
 
-/* Auto-scroll trigger zones */
+/* Scroll trigger zones */
 .scroll-trigger-left,
 .scroll-trigger-right {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100px;
+  width: 80px;
   z-index: 100;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -247,15 +269,11 @@ section.active {
   background: linear-gradient(270deg, rgba(0, 78, 52, 0.05) 0%, transparent 100%);
 }
 
-.scroll-trigger-left:hover {
+.scroll-trigger-left:hover,
+.scroll-trigger-right:hover {
   background: linear-gradient(90deg, rgba(0, 78, 52, 0.1) 0%, transparent 100%);
 }
 
-.scroll-trigger-right:hover {
-  background: linear-gradient(270deg, rgba(0, 78, 52, 0.1) 0%, transparent 100%);
-}
-
-/* Scroll indicators (optional) */
 .scroll-trigger-left::after,
 .scroll-trigger-right::after {
   content: '';
@@ -270,14 +288,14 @@ section.active {
 }
 
 .scroll-trigger-left::after {
-  left: 30px;
-  border-width: 15px 20px 15px 0;
+  left: 25px;
+  border-width: 12px 16px 12px 0;
   border-color: transparent rgb(0, 78, 52) transparent transparent;
 }
 
 .scroll-trigger-right::after {
-  right: 30px;
-  border-width: 15px 0 15px 20px;
+  right: 25px;
+  border-width: 12px 0 12px 16px;
   border-color: transparent transparent transparent rgb(0, 78, 52);
 }
 
@@ -286,59 +304,10 @@ section.active {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .skills-section {
-    padding: 30px 20px;
-    gap: 15px;
-  }
-  
-  .skills-carousel {
-    min-width: 320px;
-    max-width: 320px;
-    height: 480px;
-  }
-  
-  .skills-carousel:hover {
-    transform: translateY(-5px);
-  }
-  
-  .carousel-header {
-    font-size: 18px;
-    padding: 24px 20px;
-  }
-  
-  .carousel-body {
-    padding: 24px 20px;
-    font-size: 11pt;
-  }
-  
-  .scroll-trigger-left,
-  .scroll-trigger-right {
-    width: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-section {
-    padding: 20px 15px;
-  }
-  
-  .skills-carousel {
-    min-width: 280px;
-    max-width: 280px;
-    height: 450px;
-  }
-  
-  .scroll-trigger-left,
-  .scroll-trigger-right {
-    width: 50px;
-  }
-}
-
 /* ========== PROJECTS SECTION ========== */
 #projects {
   background-color: rgb(253, 253, 253);
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
   position: relative;
 }
@@ -346,52 +315,61 @@ section.active {
 .projects-section {
   display: flex;
   gap: 20px;
-  padding: 40px 60px;
+  padding: 20px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   position: relative;
 }
 
-/* Hide scrollbar */
 .projects-section::-webkit-scrollbar {
-  display: none;
+  height: 8px;
 }
 
-.projects-section {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.projects-section::-webkit-scrollbar-track {
+  background: rgba(0, 78, 52, 0.1);
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.projects-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 78, 52, 0.4);
+  border-radius: 10px;
+}
+
+.projects-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 78, 52, 0.6);
 }
 
 .project-card {
   background-color: rgb(255, 255, 255);
   border: 1px solid rgba(0, 78, 52, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  min-width: 380px;
-  max-width: 380px;
-  height: 480px;
-  border-radius: 20pt;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: clamp(280px, 80vw, 350px);
+  max-width: clamp(280px, 80vw, 350px);
+  height: 420px;
+  border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
   flex-shrink: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 4px 16px rgba(0, 78, 52, 0.25);
   border-color: rgb(0, 78, 52);
 }
 
 .project-card-preview {
   width: 100%;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   background-color: rgb(240, 240, 240);
 }
@@ -408,7 +386,7 @@ section.active {
 }
 
 .project-card-info {
-  padding: 30px 26px;
+  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -416,22 +394,23 @@ section.active {
 
 .project-card-info h3 {
   color: rgb(0, 78, 52);
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 18px);
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 .project-card-info .project-duration {
   color: rgb(120, 120, 120);
-  font-size: 11pt;
-  margin-bottom: 15px;
+  font-size: clamp(10px, 2vw, 12px);
+  margin-bottom: 10px;
   font-style: italic;
 }
 
 .project-card-info .project-brief {
   color: rgb(51, 51, 51);
-  font-size: 12pt;
-  line-height: 1.6;
+  font-size: clamp(11px, 2vw, 13px);
+  line-height: 1.5;
   text-align: justify;
 }
 
@@ -463,10 +442,10 @@ section.active {
 
 .project-modal-content {
   background-color: rgb(255, 255, 255);
-  margin: 40px;
+  margin: 20px;
   padding: 0;
-  border-radius: 30px;
-  max-width: 1400px;
+  border-radius: 25px;
+  max-width: 1200px;
   width: 90%;
   max-height: 90vh;
   overflow: hidden;
@@ -478,11 +457,11 @@ section.active {
 }
 
 @keyframes slideUp {
-  from {
+  from { 
     transform: translateY(50px);
     opacity: 0;
   }
-  to {
+  to { 
     transform: translateY(0);
     opacity: 1;
   }
@@ -490,42 +469,41 @@ section.active {
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: rgba(0, 78, 52, 0.9);
+  top: 15px;
+  right: 15px;
+  background-color: rgb(0, 78, 52);
   color: white;
   border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 35px;
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   z-index: 10001;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
   line-height: 1;
-  padding: 0;
 }
 
 .modal-close:hover {
-  background-color: rgb(0, 78, 52);
+  background-color: rgb(139, 0, 0);
   transform: rotate(90deg);
 }
 
 .modal-left {
-  flex: 1.2;
-  background-color: rgb(253, 253, 253);
-  padding: 15px;
+  flex: 1;
+  background-color: rgb(245, 245, 245);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  max-height: 90vh;
 }
 
 .modal-left::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .modal-left::-webkit-scrollbar-track {
@@ -538,95 +516,83 @@ section.active {
   border-radius: 10px;
 }
 
-.modal-left::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 78, 52, 0.6);
-}
-
-.modal-hero {
-  width: 100%;
-  height: 350px;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: rgb(240, 240, 240);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.modal-hero img,
-.modal-hero video {
-  width: 100%;
-  height: max-content;
-}
-
-.modal-duration {
-  font-size: 13pt;
-  color: rgb(120, 120, 120);
-  font-style: italic;
-  text-align: center;
-}
-
-.modal-title {
-  font-size: 32px;
+.modal-banner {
+  background: linear-gradient(135deg, rgb(0, 78, 52) 0%, rgb(0, 120, 80) 100%);
+  color: white;
+  padding: 30px;
+  font-size: clamp(20px, 4vw, 28px);
   font-weight: 700;
-  color: rgb(0, 78, 52);
   text-align: center;
   line-height: 1.3;
-  margin: 10px 0;
+}
+
+.modal-video {
+  width: 100%;
+  max-height: 350px;
+  background-color: rgb(20, 20, 20);
+}
+
+.modal-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .modal-tools {
-  position: relative;
-  padding: 0px 50px;
+  padding: 25px;
+  background-color: white;
 }
 
-.tools-container {
+.modal-tools h3 {
+  color: rgb(0, 78, 52);
+  font-size: clamp(16px, 3vw, 18px);
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.tool-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 0 40px;
+}
+
+.tool-container {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 20px 0;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Hide scrollbar for tools */
-.tools-container::-webkit-scrollbar {
-  display: none;
-}
-
-.tools-container {
-  -ms-overflow-style: none;
+  padding: 10px 0;
   scrollbar-width: none;
 }
 
+.tool-container::-webkit-scrollbar {
+  display: none;
+}
+
 .tool-sphere {
-  min-width: 130px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  min-width: 100px;
+  text-align: center;
   flex-shrink: 0;
 }
 
 .tool-sphere img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 78, 52, 0.2);
+  margin-bottom: 8px;
   border: 3px solid rgb(0, 78, 52);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.tool-sphere:hover img {
+.tool-sphere img:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 78, 52, 0.35);
 }
 
 .tool-sphere p {
-  text-align: center;
-  font-size: 11pt;
+  font-size: clamp(10px, 2vw, 12px);
   color: rgb(51, 51, 51);
-  max-width: 130px;
   line-height: 1.3;
 }
 
@@ -637,21 +603,17 @@ section.active {
   background-color: rgba(0, 78, 52, 0.8);
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   font-size: 24px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   cursor: pointer;
-  display: none; /* Hidden by default, shown via JS when needed */
-  align-items: center;
-  justify-content: center;
   transition: all 0.3s ease;
   z-index: 10;
 }
 
 .tool-nav-btn:hover {
   background-color: rgb(0, 78, 52);
-  transform: translateY(-50%) scale(1.1);
 }
 
 .tool-nav-btn.left {
@@ -663,54 +625,48 @@ section.active {
 }
 
 .modal-right {
-  flex: 0.8;
-  background-color: rgb(0, 78, 52);
-  color: white;
-  padding: 50px 40px;
+  flex: 1;
+  background-color: rgb(253, 253, 253);
+  padding: 30px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  justify-content: space-between;
+  gap: 20px;
+  max-height: 90vh;
 }
 
 .modal-right::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .modal-right::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 78, 52, 0.1);
   border-radius: 10px;
 }
 
 .modal-right::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 78, 52, 0.4);
   border-radius: 10px;
 }
 
-.modal-right::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .modal-description {
-  font-size: 13pt;
-  line-height: 1.8;
+  color: rgb(51, 51, 51);
+  font-size: clamp(12px, 2vw, 14px);
+  line-height: 1.7;
   text-align: justify;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .modal-description p {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .modal-discover-btn {
-  background-color: white;
-  color: rgb(0, 78, 52);
+  background-color: rgb(0, 78, 52);
+  color: white;
   border: none;
-  padding: 15px 30px;
+  padding: 12px 24px;
   border-radius: 25px;
-  font-size: 14pt;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -718,76 +674,15 @@ section.active {
 }
 
 .modal-discover-btn:hover {
-  background-color: rgb(240, 240, 240);
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design for Modal */
-@media (max-width: 1200px) {
-  .project-modal-content {
-    flex-direction: column;
-    max-height: 85vh;
-  }
-  
-  .modal-left,
-  .modal-right {
-    flex: 1;
-  }
-  
-  .modal-hero {
-    height: 9000px;
-  }
-  
-  .modal-title {
-    font-size: 60px;
-    font-family: 'Passions Conflict';
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-section {
-    padding: 30px 20px;
-  }
-  
-  .project-card {
-    min-width: 320px;
-    max-width: 320px;
-    height: 450px;
-  }
-  
-  .project-modal-content {
-    margin: 20px;
-    width: 95%;
-  }
-  
-  .modal-left,
-  .modal-right {
-    padding: 30px 25px;
-  }
-  
-  .modal-hero {
-    height: 200px;
-  }
-  
-  .modal-title {
-    font-size: 22px;
-  }
-  
-  .tool-sphere {
-    min-width: 100px;
-  }
-  
-  .tool-sphere img {
-    width: 80px;
-    height: 80px;
-  }
+  background-color: rgb(0, 100, 67);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 78, 52, 0.3);
 }
 
 /* ========== RESEARCH SECTION ========== */
 #research {
   background-color: rgb(253, 253, 253);
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
   position: relative;
 }
@@ -795,52 +690,61 @@ section.active {
 .research-section {
   display: flex;
   gap: 20px;
-  padding: 40px 60px;
+  padding: 20px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   position: relative;
 }
 
-/* Hide scrollbar */
 .research-section::-webkit-scrollbar {
-  display: none;
+  height: 8px;
 }
 
-.research-section {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.research-section::-webkit-scrollbar-track {
+  background: rgba(0, 78, 52, 0.1);
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.research-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 78, 52, 0.4);
+  border-radius: 10px;
+}
+
+.research-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 78, 52, 0.6);
 }
 
 .research-card {
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgba(0, 78, 52, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  min-width: 380px;
-  max-width: 380px;
-  height: 480px;
-  border-radius: 20pt;
+  border: 1px solid rgba(139, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: clamp(280px, 80vw, 350px);
+  max-width: clamp(280px, 80vw, 350px);
+  height: 420px;
+  border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
   flex-shrink: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
 .research-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 4px 16px rgba(0, 78, 52, 0.25);
-  border-color: rgb(0, 78, 52);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(139, 0, 0, 0.25);
+  border-color: rgb(139, 0, 0);
 }
 
 .research-card-preview {
   width: 100%;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   background-color: rgb(240, 240, 240);
 }
@@ -857,30 +761,31 @@ section.active {
 }
 
 .research-card-info {
-  padding: 30px 26px;
+  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .research-card-info h3 {
-  color: rgb(0, 78, 52);
-  font-size: 20px;
+  color: rgb(139, 0, 0);
+  font-size: clamp(16px, 3vw, 18px);
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 .research-card-info .research-duration {
   color: rgb(120, 120, 120);
-  font-size: 11pt;
-  margin-bottom: 15px;
+  font-size: clamp(10px, 2vw, 12px);
+  margin-bottom: 10px;
   font-style: italic;
 }
 
 .research-card-info .research-brief {
   color: rgb(51, 51, 51);
-  font-size: 12pt;
-  line-height: 1.6;
+  font-size: clamp(11px, 2vw, 13px);
+  line-height: 1.5;
   text-align: justify;
 }
 
@@ -907,10 +812,10 @@ section.active {
 
 .research-modal-content {
   background-color: rgb(255, 255, 255);
-  margin: 40px;
+  margin: 20px;
   padding: 0;
-  border-radius: 30px;
-  max-width: 1400px;
+  border-radius: 25px;
+  max-width: 1200px;
   width: 90%;
   max-height: 90vh;
   overflow: hidden;
@@ -921,17 +826,17 @@ section.active {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Left Side: Publication Details with Green Banner */
 .research-modal-left {
   flex: 1;
   background-color: rgb(245, 245, 245);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  max-height: 90vh;
 }
 
 .research-modal-left::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .research-modal-left::-webkit-scrollbar-track {
@@ -944,15 +849,11 @@ section.active {
   border-radius: 10px;
 }
 
-.research-modal-left::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 78, 52, 0.6);
-}
-
 .research-banner {
   background: linear-gradient(135deg, rgb(0, 78, 52) 0%, rgb(0, 120, 80) 100%);
   color: white;
-  padding: 50px 40px;
-  font-size: 32px;
+  padding: 30px;
+  font-size: clamp(20px, 4vw, 28px);
   font-weight: 700;
   text-align: center;
   line-height: 1.3;
@@ -974,47 +875,48 @@ section.active {
 }
 
 .research-details {
-  padding: 40px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .detail-section {
-  border-left: 4px solid rgb(0, 78, 52);
-  padding-left: 20px;
+  border-left: 3px solid rgb(0, 78, 52);
+  padding-left: 15px;
 }
 
 .detail-section h4 {
   color: rgb(0, 78, 52);
-  font-size: 14pt;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .detail-section p {
   color: rgb(51, 51, 51);
-  font-size: 13pt;
+  font-size: clamp(11px, 2vw, 13px);
   line-height: 1.6;
 }
 
 .research-actions {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
 }
 
 .research-btn {
   border: none;
-  padding: 14px 28px;
-  border-radius: 25px;
-  font-size: 13pt;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: clamp(11px, 2vw, 13px);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Comfortaa';
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .research-btn.primary {
@@ -1043,45 +945,45 @@ section.active {
 .citation-box {
   background-color: white;
   border: 2px solid rgb(0, 78, 52);
-  border-radius: 15px;
-  padding: 25px;
-  margin-top: 15px;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 12px;
 }
 
 .citation-box h4 {
   color: rgb(0, 78, 52);
-  font-size: 14pt;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .citation-text {
   color: rgb(51, 51, 51);
-  font-size: 12pt;
-  line-height: 1.8;
+  font-size: clamp(10px, 2vw, 12px);
+  line-height: 1.7;
   font-family: 'Georgia', serif;
   font-style: italic;
-  padding: 15px;
+  padding: 12px;
   background-color: rgb(250, 250, 250);
-  border-radius: 8px;
-  border-left: 4px solid rgb(0, 78, 52);
+  border-radius: 6px;
+  border-left: 3px solid rgb(0, 78, 52);
 }
 
-/* Right Side: Image and Description */
 .research-modal-right {
   flex: 1;
   background-color: rgb(253, 253, 253);
-  padding: 40px;
+  padding: 30px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  max-height: 90vh;
 }
 
 .research-modal-right::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .research-modal-right::-webkit-scrollbar-track {
@@ -1094,18 +996,14 @@ section.active {
   border-radius: 10px;
 }
 
-.research-modal-right::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 78, 52, 0.6);
-}
-
 .research-image-container {
   width: 100%;
-  max-height: 400px;
-  border-radius: 20px;
+  max-height: 350px;
+  border-radius: 15px;
   overflow: hidden;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 3px solid rgb(0, 78, 52);
+  border: 2px solid rgb(0, 78, 52);
 }
 
 .research-image-container img {
@@ -1117,18 +1015,18 @@ section.active {
 
 .research-description {
   color: rgb(51, 51, 51);
-  font-size: 13pt;
-  line-height: 1.8;
+  font-size: clamp(12px, 2vw, 14px);
+  line-height: 1.7;
 }
 
 .research-description h3 {
   color: rgb(0, 78, 52);
-  font-size: 22px;
+  font-size: clamp(16px, 3vw, 20px);
   font-weight: 600;
-  margin-bottom: 15px;
-  margin-top: 25px;
-  border-bottom: 3px solid rgb(0, 78, 52);
-  padding-bottom: 10px;
+  margin-bottom: 12px;
+  margin-top: 20px;
+  border-bottom: 2px solid rgb(0, 78, 52);
+  padding-bottom: 8px;
 }
 
 .research-description h3:first-child {
@@ -1136,7 +1034,7 @@ section.active {
 }
 
 .research-description p {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-align: justify;
 }
 
@@ -1146,70 +1044,106 @@ section.active {
 }
 
 .research-description ul li {
-  padding-left: 30px;
+  padding-left: 25px;
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .research-description ul li::before {
   content: '▸';
   color: rgb(0, 78, 52);
-  font-size: 18px;
+  font-size: 16px;
   position: absolute;
   left: 0;
   top: 0;
 }
 
-/* Responsive Design for Research Modal */
-@media (max-width: 1200px) {
+/* ========== FOOTER ========== */
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 12px 20px;
+  align-items: center;
+  font-size: clamp(11px, 2vw, 14px);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 900;
+  margin-top: auto;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets and small desktops */
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .about-card {
+    max-width: 90%;
+  }
+  
+  .project-modal-content,
   .research-modal-content {
     flex-direction: column;
     max-height: 85vh;
   }
   
+  .modal-left,
+  .modal-right,
   .research-modal-left,
   .research-modal-right {
-    flex: 1;
-  }
-  
-  .research-banner {
-    font-size: 26px;
-    padding: 40px 30px;
-  }
-  
-  .research-image-container {
-    max-height: 300px;
+    max-height: none;
   }
 }
 
+/* Mobile devices */
 @media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
+  
+  nav {
+    order: 2;
+    width: 100%;
+  }
+  
+  nav button {
+    padding: 6px 12px;
+  }
+  
+  .about-section {
+    padding: 20px 15px;
+  }
+  
+  .about-card {
+    padding: 20px;
+    max-width: 95%;
+  }
+  
+  .skills-section,
+  .projects-section,
   .research-section {
-    padding: 30px 20px;
+    padding: 15px 10px;
   }
   
+  .skills-carousel,
+  .project-card,
   .research-card {
-    min-width: 320px;
-    max-width: 320px;
-    height: 450px;
+    height: 380px;
   }
   
-  .research-modal-content {
-    margin: 20px;
-    width: 95%;
-  }
-  
-  .research-modal-left,
-  .research-modal-right {
+  .modal-banner,
+  .research-banner {
     padding: 25px 20px;
   }
   
-  .research-banner {
-    font-size: 22px;
-    padding: 30px 20px;
-  }
-  
-  .research-details {
-    padding: 30px 20px;
+  .modal-tools,
+  .research-details,
+  .modal-right,
+  .research-modal-right {
+    padding: 20px;
   }
   
   .research-actions {
@@ -1219,19 +1153,68 @@ section.active {
   .research-btn {
     width: 100%;
   }
+  
+  .scroll-trigger-left,
+  .scroll-trigger-right {
+    width: 60px;
+  }
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
-  padding: 15pt;
-  align-items: center;
-  font-size: medium;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 900;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 28px;
+  }
+  
+  nav button {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  
+  .about-card {
+    padding: 15px;
+  }
+  
+  .skills-carousel,
+  .project-card,
+  .research-card {
+    height: 360px;
+  }
+  
+  .project-card-preview,
+  .research-card-preview {
+    height: 160px;
+  }
+  
+  .modal-banner,
+  .research-banner {
+    padding: 20px 15px;
+  }
+  
+  .modal-tools,
+  .research-details,
+  .modal-right,
+  .research-modal-right {
+    padding: 15px;
+  }
+  
+  .scroll-trigger-left,
+  .scroll-trigger-right {
+    width: 50px;
+  }
+  
+  footer {
+    font-size: 11px;
+    padding: 10px 15px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .skills-carousel,
+  .project-card,
+  .research-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
 }
