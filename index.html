@@ -1,325 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio - Sreelakshmi Vijay</title>
-        
-        <link rel="stylesheet" href="styles.css">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Love+Light&family=Passions+Conflict&display=swap" rel="stylesheet">
-
-    </head>
-    <body>
-        <!-- HEADER -->
-        <header>
-            <div class="logo">
-                Sreelakshmi Vijay
-            </div>
-            
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreelakshmi Vijay - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">Sreelakshmi Vijay</a>
             <nav>
-                <button class="active" onclick="showSection('home',this)"> Home</button>
-                <button onclick="showSection('about',this)"> About</button>
-                <button onclick="showSection('skills',this)"> Skills</button>
-                <button onclick="showSection('projects',this)"> Projects</button>
-                <button onclick="showSection('research',this)"> Research </button>
-                <button onclick="showSection('connect',this)"> Connect</button>
+                <button class="nav-btn active" data-page="home">HOME</button>
+                <button class="nav-btn" data-page="skills">SKILLS</button>
+                <button class="nav-btn" data-page="projects">PROJECTS</button>
+                <button class="nav-btn" data-page="research">RESEARCH</button>
+                <button class="nav-btn" data-page="connect">CONNECT</button>
+                <button class="nav-btn resume-btn" data-page="resume">RESUME</button>
             </nav>
-            
-            <div class="header-buttons">
-                <button onclick="showSection('resume',this)">Request Resume</button>
-            </div>
-        </header>
-
-        <!-- HOME -->
-        <section id="home" class="active">
-            <div style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 120px); font-size: 48px; color: rgb(0, 78, 52); font-family: 'Passions Conflict';">
-                Welcome to My Portfolio
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about">
-            <div class="about-section">
-                <div class="about-card">
-                    <p>I'm Sreelakshmi Vijay, a Data Science major driven by the belief that the solutions to our greatest challenges already exist within the data we possess — we simply need the right lens to uncover them. I build those lenses using the full spectrum of machine learning, transforming raw information into meaningful insights that can create real-world impact.</p>
-                    
-                    <p>&nbsp;</p>
-
-                    <p>Whether I'm exploring untapped datasets or training models to perform better and smarter, I'm fueled by the possibility of making a positive difference. I value collaboration deeply — not just within data, but with people — because meaningful progress is rarely achieved alone. As the saying goes, "If you want to go fast, go alone; if you want to go far, go together."</p>
-                    
-                    <p>&nbsp;</p>
-                    
-                    <p>I believe that quality is not born from pressure but from patience, persistence, and deliberate effort. Growth is a continuous process: what I didn't do yesterday, I can do today; what I do today, I can improve tomorrow. With curiosity as my compass and impact as my goal, I strive to keep learning, building, and evolving.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills">
-            <div class="skills-section">
-                <div class="skills-carousel">
-                    <div class="carousel-header">
-                        Programming
-                    </div>
-                    <div class="carousel-body">
-                        Python (Proficient)<br>C++ (Beginner)<br>MATLAB (Beginner)<br>HTML (Beginner)
-                    </div>
-                </div>
-                <div class="skills-carousel">
-                    <div class="carousel-header">
-                        Databases
-                    </div>
-                    <div class="carousel-body">
-                        PostgreSQL (Intermediate)<br>MongoDB (Intermediate)
-                    </div>
-                </div>
-                <div class="skills-carousel">
-                    <div class="carousel-header">
-                        Libraries & Frameworks
-                    </div>
-                    <div class="carousel-body">
-                        NumPy<br>Pandas<br>SciPy<br>Matplotlib<br>Seaborn<br>Scikit-learn<br>Django
-                    </div>
-                </div>
-                <div class="skills-carousel">
-                    <div class="carousel-header">
-                        Machine Learning & AI
-                    </div>
-                    <div class="carousel-body">
-                        Fuzzy Logic<br>Genetic Algorithms<br>Artificial Neural Networks<br>Neuro-Fuzzy Systems (ANFIS)<br>Physics-Informed Neural Networks (PINNs)<br>Neural ODEs<br>Transformers<br>State-Space Model
-                    </div>
-                </div>
-                <div class="skills-carousel">
-                    <div class="carousel-header">
-                        Scientific & Computational Methods
-                    </div>
-                    <div class="carousel-body">
-                        Numerical ODE Solvers (Runge-Kutta)<br>Monte Carlo Simulation<br>Synthetic Data Generation
-                    </div>
-                </div>
-                <div class="skills-carousel">
-                    <div class="carousel-header">
-                        Data Science & Analytics
-                    </div>
-                    <div class="carousel-body">
-                        Data Preprocessing<br>Feature Engineering (normalization<br>lag features<br>transformations)<br>Exploratory Data Analysis<br>Data Visualization<br>Spatiotemporal Data Analysis
-                    </div>
-                </div>
-                <div class="skills-carousel">
-                    <div class="carousel-header">
-                        Web & Software Development
-                    </div>
-                    <div class="carousel-body">
-                        Django Web Development<br>CRUD Application Design<br>Authentication & Authorization<br>Form Validation<br>Database Schema Design<br>ORM Query Optimization
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- PROJECTS -->
-        <section id="projects">
-            <div class="projects-section">
-                <!-- Project Card 1 -->
-                <div class="project-card" onclick="openProjectModal('project1')">
-                    <div class="project-card-preview">
-                        <img src="media/OTRS.gif" alt="Online Ticket Reservation System" onerror="this.src='https://via.placeholder.com/380x300/004e34/ffffff?text=OTRS'" loading="lazy">
-                    </div>
-                    <div class="project-card-info">
-                        <h3>Online Ticket Reservation System</h3>
-                        <p class="project-duration">January 2025</p>
-                        <p class="project-brief">A full-stack web application for streamlining ticket booking across multiple transportation modes with real-time database updates and comprehensive admin features.</p>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="project-card" onclick="openProjectModal('project2')">
-                    <div class="project-card-preview">
-                        <img src="project2-preview.jpg" alt="Disaster Relief System" onerror="this.src='https://via.placeholder.com/380x300/004e34/ffffff?text=Disaster+Relief'" loading="lazy">
-                    </div>
-                    <div class="project-card-info">
-                        <h3>Disaster Relief Coordination and Management System</h3>
-                        <p class="project-duration">November 2025 - Present</p>
-                        <p class="project-brief">Resource and Communication Modules for real-time inventory tracking, warehouse management, and emergency communication during disaster relief operations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECT MODAL POPUP -->
-        <div id="projectModal" class="project-modal">
-            <div class="project-modal-content">
-                <button class="modal-close" onclick="closeProjectModal()">&times;</button>
-                
-                <div class="modal-left">
-                    <!-- Hero Image -->
-                    <div class="modal-hero-image">
-                        <img id="modalHeroImage" src="" alt="Project Demo" loading="lazy">
-                    </div>
-                    
-                    <!-- Project Header -->
-                    <div class="modal-header">
-                        <p class="modal-duration" id="modalDuration">July 2024 - December 2024</p>
-                        <h2 id="modalTitle">Project Title</h2>
-                    </div>
-                    
-                    <!-- Tools Section with Horizontal Scroll -->
-                    <div class="tools-section">
-                        <h3>Technologies Used</h3>
-                        <button class="tool-nav-btn left" id="toolNavLeft" onclick="scrollTools(-1)">‹</button>
-                        <div class="tools-container" id="toolsContainer">
-                            <!-- Tool spheres will be dynamically added here -->
-                            <div class="tool-sphere">
-                                <img src="https://via.placeholder.com/100/004e34/ffffff?text=Python" alt="Python" loading="lazy">
-                                <p>Python</p>
-                            </div>
-                            <div class="tool-sphere">
-                                <img src="https://via.placeholder.com/100/004e34/ffffff?text=Django" alt="Django" loading="lazy">
-                                <p>Django</p>
-                            </div>
-                            <div class="tool-sphere">
-                                <img src="https://via.placeholder.com/100/004e34/ffffff?text=PostgreSQL" alt="PostgreSQL" loading="lazy">
-                                <p>PostgreSQL</p>
-                            </div>
-                            <div class="tool-sphere">
-                                <img src="https://via.placeholder.com/100/004e34/ffffff?text=Tool" alt="Another Tool" loading="lazy">
-                                <p>Ultimate Guide to Interplanetary</p>
-                            </div>
-                            <!-- Add more tool spheres as needed -->
-                        </div>
-                        <button class="tool-nav-btn right" id="toolNavRight" onclick="scrollTools(1)">›</button>
-                    </div>
-                </div>
-                
-                <div class="modal-right">
-                    <!-- Project Description -->
-                    <div class="modal-description" id="modalDescription">
-                        <p>A software-made magical content related to space adventure uploading an video, or even defining a whole new.</p>
-                        <p>Detailed project description goes here. You can include multiple paragraphs, bullet points, and any other relevant information about the project.</p>
-                        <p>Add as much detail as you need to properly describe the project, its goals, methodology, and outcomes.</p>
-                    </div>
-                    
-                    <!-- Discover More Button (optional) -->
-                    <button class="modal-discover-btn" id="modalDiscoverBtn" onclick="window.open('', '_blank')">
-                        Discover More
-                    </button>
-                </div>
-            </div>
         </div>
+    </header>
 
-        <!-- RESEARCH -->
-        <section id="research">
-            <div class="research-section">
-                <!-- Research Card 1 -->
-                <div class="research-card" onclick="openResearchModal('research1')">
-                    <div class="research-card-preview">
-                        <img src="research1-preview.jpg" alt="Fire Risk Prediction" onerror="this.src='https://via.placeholder.com/380x300/8B0000/ffffff?text=Fire+Risk+Prediction'" loading="lazy">
-                    </div>
-                    <div class="research-card-info">
-                        <h3>Fire Risk Prediction with Soft Computing Algorithms</h3>
-                        <p class="research-duration">December 2025 - Present</p>
-                        <p class="research-brief">Applying soft computing models including Fuzzy Logic, Neural Networks, and Neuro-Fuzzy approaches for wildfire risk prediction using spatiotemporal and meteorological datasets.</p>
+    <main>
+        <!-- HOME PAGE -->
+        <div class="page active" id="home">
+            <div class="home-container">
+                <div class="about-section">
+                    <div class="about-content">
+                        <h2>About Me</h2>
+                        <p>I'm Sreelakshmi Vijay, a Data Science major driven by the belief that the solutions to our greatest challenges already exist within the data we possess—we simply need the right lens to uncover them. I build those lenses using the full spectrum of machine learning, transforming raw information into meaningful insights that can create real-world impact.</p>
+                        <p>Whether I'm exploring untapped datasets or training models to perform better and smarter, I'm fueled by the possibility of making a positive difference. I value collaboration deeply—not just within data, but with people—because meaningful progress is rarely achieved alone. As the saying goes, "If you want to go fast, go alone; if you want to go far, go together."</p>
+                        <p>I believe that quality is not born from pressure but from patience, persistence, and deliberate effort. Growth is a continuous process: what I didn't do yesterday, I can do today; what I do today, I can improve tomorrow. With curiosity as my compass and impact as my goal, I strive to keep learning, building, and evolving.</p>
                     </div>
                 </div>
-
-                <!-- Research Card 2 -->
-                <div class="research-card" onclick="openResearchModal('research2')">
-                    <div class="research-card-preview">
-                        <img src="research2-preview.jpg" alt="Pharmacokinetic Models" onerror="this.src='https://via.placeholder.com/380x300/8B0000/ffffff?text=Pharmacokinetic+Models'" loading="lazy">
+                <div class="stats-section">
+                    <div class="stat-card main" data-category="all">
+                        <div class="stat-number" id="totalProjects">0</div>
+                        <div class="stat-label">Total Projects</div>
                     </div>
-                    <div class="research-card-info">
-                        <h3>Deep Learning Approaches for Solving Pharmacokinetic Models</h3>
-                        <p class="research-duration">November 2025 - Present</p>
-                        <p class="research-brief">Implementing Physics-Informed Neural Networks, Neural ODEs, Transformers, and State-Space Models for concentration and parameter estimation in pharmacokinetic systems.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- RESEARCH MODAL POPUP -->
-        <div id="researchModal" class="research-modal">
-            <div class="research-modal-content">
-                <button class="modal-close" onclick="closeResearchModal()">&times;</button>
-                
-                <!-- Left Side: Publication Details -->
-                <div class="research-modal-left">
-                    <div class="research-banner" id="researchBannerTitle">
-                        Research Title
-                    </div>
-                    
-                    <div class="research-details">
-                        <div class="detail-section">
-                            <h4>Authors</h4>
-                            <p id="researchAuthors">Sreelakshmi Vijay</p>
+                    <div class="stat-cards-group">
+                        <div class="stat-card" data-category="technical">
+                            <div class="stat-number" id="technicalProjects">0</div>
+                            <div class="stat-label">Technical</div>
                         </div>
-                        
-                        <div class="detail-section">
-                            <h4>Status</h4>
-                            <p id="researchVenue">Ongoing Research</p>
+                        <div class="stat-card" data-category="research">
+                            <div class="stat-number" id="researchProjects">0</div>
+                            <div class="stat-label">Research</div>
                         </div>
-                        
-                        <div class="detail-section">
-                            <h4>Duration</h4>
-                            <p id="researchDOI">December 2025 - Present</p>
-                        </div>
-                        
-                        <div class="detail-section">
-                            <h4>Keywords</h4>
-                            <p id="researchKeywords">Machine Learning, Deep Learning</p>
-                        </div>
-                        
-                        <div class="research-actions">
-                            <button class="research-btn primary" id="researchPaperLink" onclick="" style="display: none;">
-                                📄 Read Paper
-                            </button>
-                        </div>
-                        
-                        <div class="citation-box">
-                            <h4>Citation</h4>
-                            <div class="citation-text" id="researchCitation">
-                                Citation information will be available upon publication.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Side: Description -->
-                <div class="research-modal-right">
-                    <div class="research-image-container">
-                        <img id="researchModalImage" src="" alt="Research Visual" loading="lazy">
-                    </div>
-                    
-                    <div class="research-description" id="researchDescription">
-                        <h3>Overview</h3>
-                        <p>Research description will be populated here.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- CONNECT -->
-        <section id="connect">
-            <div style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 120px); font-size: 48px; color: rgb(0, 78, 52); font-family: 'Passions Conflict';">
-                Connect Section Coming Soon
+        <!-- SKILLS PAGE -->
+        <div class="page" id="skills">
+            <div class="skills-container">
+                <h2 class="page-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">💻</div>
+                            <h3>Programming Languages</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level proficient">Proficient</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-level beginner">Beginner</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MATLAB</span>
+                                <span class="skill-level beginner">Beginner</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">HTML</span>
+                                <span class="skill-level beginner">Beginner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">🗄️</div>
+                            <h3>Databases</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <span class="skill-name">PostgreSQL</span>
+                                <span class="skill-level intermediate">Intermediate</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-level intermediate">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">📚</div>
+                            <h3>Libraries & Frameworks</h3>
+                        </div>
+                        <div class="skill-items tags">
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">SciPy</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Keras</span>
+                            <span class="skill-tag">Django</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">🤖</div>
+                            <h3>Machine Learning & AI</h3>
+                        </div>
+                        <div class="skill-items tags">
+                            <span class="skill-tag">Fuzzy Logic</span>
+                            <span class="skill-tag">Genetic Algorithms</span>
+                            <span class="skill-tag">Neural Networks</span>
+                            <span class="skill-tag">ANFIS</span>
+                            <span class="skill-tag">PINNs</span>
+                            <span class="skill-tag">Neural ODEs</span>
+                            <span class="skill-tag">Transformers</span>
+                            <span class="skill-tag">State-Space Models</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">🔬</div>
+                            <h3>Scientific & Computational</h3>
+                        </div>
+                        <div class="skill-items tags">
+                            <span class="skill-tag">Differential Equations</span>
+                            <span class="skill-tag">Numerical Methods</span>
+                            <span class="skill-tag">Optimization</span>
+                            <span class="skill-tag">Statistical Analysis</span>
+                            <span class="skill-tag">Data Mining</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">🛠️</div>
+                            <h3>Tools & Technologies</h3>
+                        </div>
+                        <div class="skill-items tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- RESUME -->
-        <section id="resume">
-            <div style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 120px); font-size: 48px; color: rgb(0, 78, 52); font-family: 'Passions Conflict';">
-                Resume Request Form Coming Soon
+        <!-- PROJECTS PAGE -->
+        <div class="page" id="projects">
+            <div class="carousel-wrapper">
+                <h2 class="page-title">Technical Projects</h2>
+                <div class="carousel-container" id="projectsCarousel">
+                    <div class="project-card" onclick="openModal('projectModal1')">
+                        <div class="project-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Disaster Relief Coordination System</h3>
+                            <span class="project-date">November 2025 - Present</span>
+                            <p>Resource & communication modules for comprehensive disaster management.</p>
+                            <div class="project-tags">
+                                <span class="tag">Django</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">GIS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" onclick="openModal('projectModal2')">
+                        <div class="project-thumbnail">
+                            <img src="media/OTRS.gif" alt="Disaster Relief Coordination System Demo" style="width:100%;height:100%;border-radius:8px;">
+                        </div>
+                        <div class="project-info">
+                            <h3>Online Ticket Reservation System</h3>
+                            <span class="project-date">January 2025</span>
+                            <p>Full-stack web application for train/flight/bus ticket booking with admin controls.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="scrollCarousel('projectsCarousel', -1)">←</button>
+                    <button class="carousel-btn" onclick="scrollCarousel('projectsCarousel', 1)">→</button>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- FOOTER -->
-        <footer>
-            © 2026 Sreelakshmi Vijay — All rights reserved
-        </footer>
+        <!-- RESEARCH PAGE -->
+        <div class="page" id="research">
+            <div class="carousel-wrapper">
+                <h2 class="page-title">Research Projects</h2>
+                <div class="carousel-container" id="researchCarousel">
+                    <div class="project-card" onclick="openModal('researchModal1')">
+                        <div class="project-thumbnail" style="background: linear-gradient(135deg, #F3E5F5 0%, #CE93D8 50%, #AB47BC 100%);">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Fire Risk Prediction with Soft Computing</h3>
+                            <span class="project-date">December 2025 - Present</span>
+                            <p>Wildfire risk assessment using fuzzy logic, neural networks, and ANFIS.</p>
+                            <div class="project-tags">
+                                <span class="tag">Fuzzy Logic</span>
+                                <span class="tag">ANFIS</span>
+                                <span class="tag">ML</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <script src="script.js"></script>
-    </body>
+                    <div class="project-card" onclick="openModal('researchModal2')">
+                        <div class="project-thumbnail" style="background: linear-gradient(135deg, #F3E5F5 0%, #CE93D8 50%, #AB47BC 100%);">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Deep Learning for Pharmacokinetic Models</h3>
+                            <span class="project-date">November 2025 - Present</span>
+                            <p>Applying PINNs, Neural ODEs, and Transformers to solve pharmacokinetic equations.</p>
+                            <div class="project-tags">
+                                <span class="tag">PINNs</span>
+                                <span class="tag">Neural ODEs</span>
+                                <span class="tag">Transformers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="scrollCarousel('researchCarousel', -1)">←</button>
+                    <button class="carousel-btn" onclick="scrollCarousel('researchCarousel', 1)">→</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONNECT PAGE -->
+        <div class="page" id="connect">
+            <div class="connect-container">
+                <div class="connect-hero">
+                    <h2>Let's Connect & Collaborate</h2>
+                    <p>I'm always excited to explore new opportunities, collaborate on innovative projects, or simply discuss the latest in data science and machine learning. Whether you have a project in mind, want to exchange ideas, or just fancy a chat about tech—let's make it happen!</p>
+                </div>
+                <div class="social-grid">
+                    <a href="https://www.linkedin.com/in/sreelakshmi-vijay" class="social-card" target="_blank" rel="noopener">
+                        <div class="social-icon">
+                            <!-- LinkedIn SVG -->
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="6" fill="#0077B5"/>
+                                <path d="M10.666 13.333h3.111v1.333h.045c.434-.823 1.494-1.69 3.077-1.69 3.29 0 3.895 2.165 3.895 4.983v5.707h-3.333v-5.067c0-1.21-.022-2.77-1.687-2.77-1.688 0-1.946 1.32-1.946 2.684v5.153h-3.333V13.333zm-1.667-3.333a1.667 1.667 0 1 1 0-3.334 1.667 1.667 0 0 1 0 3.334zm1.667 13.333h-3.333V13.333h3.333v10zm15-20H5.333A2.333 2.333 0 0 0 3 5.333v21.334A2.333 2.333 0 0 0 5.333 29h21.334A2.333 2.333 0 0 0 29 26.667V5.333A2.333 2.333 0 0 0 26.667 3z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect professionally and stay updated with my journey</p>
+                    </a>
+                    <a href="https://github.com/sreelakshmi-vijay" class="social-card" target="_blank" rel="noopener">
+                        <div class="social-icon">
+                            <!-- GitHub SVG -->
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="6" fill="#181717"/>
+                                <path d="M16 5.333c-5.89 0-10.667 4.776-10.667 10.667 0 4.72 3.06 8.722 7.308 10.144.534.098.729-.232.729-.516 0-.255-.009-.93-.014-1.825-2.974.646-3.602-1.434-3.602-1.434-.486-1.234-1.187-1.563-1.187-1.563-.97-.663.073-.65.073-.65 1.073.076 1.638 1.103 1.638 1.103.953 1.634 2.5 1.162 3.11.889.097-.691.373-1.162.678-1.43-2.375-.27-4.87-1.188-4.87-5.29 0-1.168.418-2.124 1.104-2.874-.111-.27-.478-1.36.104-2.836 0 0 .9-.288 2.95 1.098a10.22 10.22 0 0 1 2.687-.362c.912.004 1.832.124 2.687.362 2.05-1.386 2.948-1.098 2.948-1.098.584 1.476.217 2.566.106 2.836.688.75 1.104 1.706 1.104 2.874 0 4.112-2.5 5.017-4.882 5.283.384.33.726.98.726 1.976 0 1.427-.013 2.58-.013 2.93 0 .287.192.619.734.514C23.61 24.72 26.667 20.72 26.667 16c0-5.89-4.776-10.667-10.667-10.667z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Explore my code, projects, and contributions</p>
+                    </a>
+                </div>
+                <div class="contact-info">
+                    <h3>📧 Get In Touch</h3>
+                    <p>Whether it's collaboration, opportunities, research discussions, or just to say hello—I'd love to hear from you!</p>
+                    <p class="email-address"><a href="mailto:sreelakshmivijay@mail.com">sreelakshmivijay@mail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESUME PAGE -->
+        <div class="page" id="resume">
+            <div class="resume-container">
+                <div class="resume-content">
+                    <h2>Request My Resume</h2>
+                    <p>Interested in learning more about my experience? I'd be happy to share my resume with you.</p>
+                    <button class="resume-btn-action">Send Request</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODALS -->
+    <div class="modal" id="projectModal1">
+        <div class="modal-overlay" onclick="closeModal('projectModal1')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('projectModal1')">×</button>
+            <div class="modal-body">
+                <div class="modal-media">
+                    <div class="media-placeholder">
+                        <div class="play-icon-large"></div>
+                        <p>Demo Video/GIF</p>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2>Disaster Relief Coordination System</h2>
+                    <p class="modal-date">November 2025 - Present</p>
+                    <div class="modal-section">
+                        <h3>Responsibility: Resource & Communication Modules</h3>
+                        <p><strong>Overview:</strong> Group project for comprehensive disaster relief coordination and management.</p>
+                        <p><strong>Key Contributions:</strong></p>
+                        <ul>
+                            <li>Defined requirements for real-time inventory tracking and emergency communication</li>
+                            <li>Documented workflows for inventory dashboards and geo-tagged warehouse availability</li>
+                            <li>Preparing for implementation with system architecture review</li>
+                        </ul>
+                        <p><strong>Status:</strong> Active development, transitioning to implementation.</p>
+                    </div>
+                    <div class="modal-tools">
+                        <h3>Technologies</h3>
+                        Will be updated shortly ...
+                        <div class="tool-grid">
+                            <!-- <div class="tool-item"><span>Django</span></div>
+                            <div class="tool-item"><span>PostgreSQL</span></div>
+                            <div class="tool-item"><span>Real-time</span></div>
+                            <div class="tool-item"><span>GIS</span></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="projectModal2">
+        <div class="modal-overlay" onclick="closeModal('projectModal2')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('projectModal2')">×</button>
+            <div class="modal-body">
+                <div class="modal-media">
+                    <div class="media-placeholder">
+                        <div class="play-icon-large"></div>
+                        <p>Demo Video/GIF</p>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2>Online Ticket Reservation System</h2>
+                    <p class="modal-date">January 2025</p>
+                    <div class="modal-section">
+                        <p>Developed a Django web application to explore relational databases with PostgreSQL for storing train schedules, tickets, and user information.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li><strong>User:</strong> Search trains/flights/buses, book tickets, manage bookings</li>
+                            <li><strong>Admin:</strong> CRUD operations for schedules and locations</li>
+                            <li><strong>Security:</strong> Django authentication and authorization</li>
+                            <li><strong>Validation:</strong> Django Forms for data integrity</li>
+                        </ul>
+                        <p><strong>Optimization:</strong> Django ORM for efficient queries.</p>
+                    </div>
+                    <div class="modal-tools">
+                        <h3>Technologies</h3>
+                        <div class="tool-grid">
+                            <div class="tool-item"><span>Python</span></div>
+                            <div class="tool-item"><span>Django</span></div>
+                            <div class="tool-item"><span>PostgreSQL</span></div>
+                            <div class="tool-item"><span>HTML/CSS</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="researchModal1">
+        <div class="modal-overlay" onclick="closeModal('researchModal1')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('researchModal1')">×</button>
+            <div class="modal-body">
+                <div class="modal-media">
+                    <div class="media-placeholder research">
+                        <div class="play-icon-large"></div>
+                        <p>Research Visualization</p>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2>Fire Risk Prediction with Soft Computing</h2>
+                    <p class="modal-date">December 2025 - Present</p>
+                    <div class="modal-section">
+                        <p><strong>Objective:</strong> Develop wildfire risk assessment models using soft computing.</p>
+                        <p><strong>Methodology:</strong></p>
+                        <ul>
+                            <li>Analyzed spatiotemporal, meteorological, and environmental datasets</li>
+                            <li>Data preprocessing with normalization and temporal lag features</li>
+                            <li>Applying Fuzzy Logic, Neural Networks, and ANFIS for prediction</li>
+                        </ul>
+                        <p><strong>Impact:</strong> Early warning systems for wildfire prevention.</p>
+                    </div>
+                    <div class="publication-box">
+                        <h3>Publication Status</h3>
+                        <p>Research ongoing. Paper details available upon completion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="researchModal2">
+        <div class="modal-overlay" onclick="closeModal('researchModal2')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('researchModal2')">×</button>
+            <div class="modal-body">
+                <div class="modal-media">
+                    <div class="media-placeholder research">
+                        <div class="play-icon-large"></div>
+                        <p>Research Visualization</p>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2>Deep Learning for Pharmacokinetic Models</h2>
+                    <p class="modal-date">November 2025 - Present</p>
+                    <div class="modal-section">
+                        <p><strong>Objective:</strong> Apply deep learning to solve pharmacokinetic ODE models.</p>
+                        <p><strong>Methodology:</strong></p>
+                        <ul>
+                            <li>Formulated 1- and 2-compartment ODE models</li>
+                            <li>Generated synthetic datasets with Runge-Kutta and Monte Carlo</li>
+                            <li>Implementing PINNs, Neural ODEs, and Transformers</li>
+                        </ul>
+                        <p><strong>Impact:</strong> Enhanced accuracy for personalized medicine.</p>
+                    </div>
+                    <div class="publication-box">
+                        <h3>Publication Status</h3>
+                        <p>Research ongoing. Paper details available upon completion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Sreelakshmi Vijay</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
